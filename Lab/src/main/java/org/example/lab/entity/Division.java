@@ -22,6 +22,14 @@ public class Division {
     @OneToOne(cascade = CascadeType.ALL)
     private Member president;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(
+            cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY,
+            mappedBy = "division"
+    )
     private List<Member> members = new ArrayList<>();
+
+    @ManyToOne
+    @JoinColumn(name = "association_id")
+    private Association association;
 }

@@ -14,6 +14,6 @@ public class Association {
     private Long id;
     private String name;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "association", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Division> divisions = new ArrayList<>();
 }
