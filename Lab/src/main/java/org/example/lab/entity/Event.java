@@ -9,7 +9,9 @@ import java.util.List;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-@Data @NoArgsConstructor
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public abstract class Event {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
